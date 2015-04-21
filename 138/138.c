@@ -1,4 +1,4 @@
-/**
+ï»¿/**
  * Definition for singly-linked list with a random pointer.
  * struct RandomListNode {
  *     int label;
@@ -7,8 +7,8 @@
  * };
  */
 
-//¸´ÖÆÁ´±íµÄÃ¿Ò»¸ö½Úµã,Ö±½Ó¼ÓÔÚÔ­Á´±íµÄºóÃæ
-//randomÔÝÊ±²»´¦Àí,ÒòÎªÁ´±í½Úµã²¢Ã»ÓÐ¸´ÖÆÍê±Ï
+//å¤åˆ¶é“¾è¡¨çš„æ¯ä¸€ä¸ªèŠ‚ç‚¹,ç›´æŽ¥åŠ åœ¨åŽŸé“¾è¡¨çš„åŽé¢
+//randomæš‚æ—¶ä¸å¤„ç†,å› ä¸ºé“¾è¡¨èŠ‚ç‚¹å¹¶æ²¡æœ‰å¤åˆ¶å®Œæ¯•
 void cloneNodes(struct RandomListNode *head) {
     struct RandomListNode *pCur = head;
     struct RandomListNode *pClone = NULL;
@@ -22,13 +22,13 @@ void cloneNodes(struct RandomListNode *head) {
     }
 }
 
-//¸ø¸´ÖÆµÄ½ÚµãrandomÖ¸Õë¸³Öµ
+//ç»™å¤åˆ¶çš„èŠ‚ç‚¹randomæŒ‡é’ˆèµ‹å€¼
 void setRandom(struct RandomListNode *head){
     struct RandomListNode *pCur = head;
     struct RandomListNode *pClone = NULL;
     while(pCur != NULL){
         pClone = pCur->next;
-        //ÐèÒªÅÐ¶Ï²»Îª¿ÕµÄÇé¿ö
+        //éœ€è¦åˆ¤æ–­ä¸ä¸ºç©ºçš„æƒ…å†µ
         if(pCur->random != NULL){
             pClone->random = pCur->random->next;
         }
@@ -36,12 +36,12 @@ void setRandom(struct RandomListNode *head){
     }
 }
 
-//·ÖÀëÁ´±í
+//åˆ†ç¦»é“¾è¡¨
 struct RandomListNode *getCloneList(struct RandomListNode *head){
     struct RandomListNode *pCur = head;
     struct RandomListNode *pCloneHead = NULL;
     struct RandomListNode *pClonePre = NULL;
-    //´¦ÀíÏÂÍ·²¿
+    //å¤„ç†ä¸‹å¤´éƒ¨
     if(pCur != NULL){
         pCloneHead = pCur->next;
         pClonePre = pCloneHead;

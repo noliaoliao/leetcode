@@ -1,4 +1,4 @@
-//��������,ֻҪ�е�׬�ͽ���һ������
+﻿//遍历数组,只要有的赚就进行一次买卖
 
 int maxProfit(int* prices, int pricesSize) {
     int ans = 0;

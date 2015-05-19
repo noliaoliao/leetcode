@@ -1,16 +1,16 @@
-int minSubArrayLen(int s, int* nums, int numsSize) {
-    int nLeft = 0;     //´°¿Ú×ó±ß½ç
-    int nRight = -1;   //´°¿ÚÓÒ±ß½ç
-    int nTotal = 0;    //´°¿ÚÊıÖµºÍ
+ï»¿int minSubArrayLen(int s, int* nums, int numsSize) {
+    int nLeft = 0;     //çª—å£å·¦è¾¹ç•Œ
+    int nRight = -1;   //çª—å£å³è¾¹ç•Œ
+    int nTotal = 0;    //çª—å£æ•°å€¼å’Œ
     int nMinLen = numsSize+1;
 
     while(nRight < numsSize){
         while(nTotal < s && nRight < numsSize){
-            nTotal += nums[++nRight];  //ÓÒ»¬¶¯
+            nTotal += nums[++nRight];  //å³æ»‘åŠ¨
         }
         if(nTotal >= s){
             if(nRight-nLeft+1 < nMinLen) nMinLen = nRight-nLeft+1;
-            nTotal -= nums[nLeft++];   //×ó»¬¶¯
+            nTotal -= nums[nLeft++];   //å·¦æ»‘åŠ¨
         }
     }
 

@@ -1,4 +1,4 @@
-/**
+ï»¿/**
  * Definition for a binary tree node.
  * struct TreeNode {
  *     int val;
@@ -11,19 +11,19 @@ struct TreeNode* flattenTree(struct TreeNode* root){
     if(root == NULL || (root->left == NULL && root->right == NULL)) return root;
 
     if(root->left != NULL){
-        //±äÆ½×ó×ÓÊ÷
+        //å˜å¹³å·¦å­æ ‘
         struct TreeNode* pRight = flattenTree(root->left);
-        //±éÀúµ½±äÆ½µÄ×ó×ÓÊ÷µÄ×îºóÒ»¸ö½Úµã,ºÍÓÒ×ÓÊ÷Á¬½Ó
+        //éåŽ†åˆ°å˜å¹³çš„å·¦å­æ ‘çš„æœ€åŽä¸€ä¸ªèŠ‚ç‚¹,å’Œå³å­æ ‘è¿žæŽ¥
         struct TreeNode* pWalkRight = pRight;
         while(pWalkRight->right != NULL){
             pWalkRight = pWalkRight->right;
         }
-        //±äÆ½ÓÒ×ÓÊ÷
+        //å˜å¹³å³å­æ ‘
         pWalkRight->right = flattenTree(root->right);   
         root->right = pRight;
         root->left = NULL;
     }else{
-        //×ó×ÓÊ÷Îª¿Õ,Ö±½ÓµÝ¹é´¦ÀíÓÒ×ÓÊ÷¼´¿É
+        //å·¦å­æ ‘ä¸ºç©º,ç›´æŽ¥é€’å½’å¤„ç†å³å­æ ‘å³å¯
         root->right = flattenTree(root->right);
     }
     

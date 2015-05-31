@@ -1,11 +1,11 @@
-int canCompleteCircuit(int* gas, int gasSize, int* cost, int costSize) {
-    int nGasSum = 0;     //´Ó¼ÆÊı¿ªÊ¼gasµÄ×ÜºÍ
-    int nGasTotal = 0;   //Ò»ÌËÏÂÀ´gasµÄÊ£ÓàÁ¿
-    int start = -1;      //Æğµã
+ï»¿int canCompleteCircuit(int* gas, int gasSize, int* cost, int costSize) {
+    int nGasSum = 0;     //ä»è®¡æ•°å¼€å§‹gasçš„æ€»å’Œ
+    int nGasTotal = 0;   //ä¸€è¶Ÿä¸‹æ¥gasçš„å‰©ä½™é‡
+    int start = -1;      //èµ·ç‚¹
 
     /**
-    *´ÓÈÎºÎÒ»µã¿ªÊ¼³ö·¢,µ±Ê£ÓàgasÁ¿Ğ¡ÓÚ0Ê±,ÖØĞÂ¿ªÊ¼×ß 
-    *×îÖÕÈç¹ûÊ£ÏÂµÄÈç¹ûgas´óÓÚµÈ0,ËµÃ÷¿ÉÒÔÍêÕû×ßÒ»ÌË
+    *ä»ä»»ä½•ä¸€ç‚¹å¼€å§‹å‡ºå‘,å½“å‰©ä½™gasé‡å°äº0æ—¶,é‡æ–°å¼€å§‹èµ° 
+    *æœ€ç»ˆå¦‚æœå‰©ä¸‹çš„å¦‚æœgaså¤§äºç­‰0,è¯´æ˜å¯ä»¥å®Œæ•´èµ°ä¸€è¶Ÿ
     */
     for(int i = 0; i < gasSize; i++){
         nGasSum += (gas[i]-cost[i]);

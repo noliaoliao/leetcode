@@ -1,4 +1,4 @@
-class LRUCache{
+ï»¿class LRUCache{
 public:
     LRUCache(int capacity){
         m_maxlen = capacity;
@@ -33,8 +33,8 @@ public:
     }
 
 private:
-    //ÓÃË«ÏòÁ´±íÀ´ÊµÏÖO(1)µÄ²åÈëºÍÉ¾³ı
-    //ÓÃhash±íÀ´ÊµÏÖO(1)µÄ²éÕÒ
+    //ç”¨åŒå‘é“¾è¡¨æ¥å®ç°O(1)çš„æ’å…¥å’Œåˆ é™¤
+    //ç”¨hashè¡¨æ¥å®ç°O(1)çš„æŸ¥æ‰¾
     list<pair<int,int>> m_cache;
     unordered_map<int,list<pair<int,int>>::iterator> m_map;
     int m_maxlen;
